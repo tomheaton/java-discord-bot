@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'dev.tomheaton.java-discord-bot'
+group 'dev.tomheaton.java_discord_bot'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
