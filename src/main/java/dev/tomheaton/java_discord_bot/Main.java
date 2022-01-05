@@ -1,5 +1,6 @@
 package dev.tomheaton.java_discord_bot;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 
@@ -7,9 +8,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String token = "your token";
+        Dotenv dotenv = Dotenv.load();
+        String token = dotenv.get("BOT_TOKEN");
 
-        DiscordApi api = new DiscordApiBuilder().setToken(token).login().join();
+        DiscordApi api = new DiscordApiBuilder(a).setToken(token).login().join();
 
         api.addMessageCreateListener(event -> {
             if (event.getMessageContent().equalsIgnoreCase("!ping")) {
