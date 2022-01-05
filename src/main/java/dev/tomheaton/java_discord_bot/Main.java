@@ -11,7 +11,7 @@ public class Main {
         Dotenv dotenv = Dotenv.load();
         String token = dotenv.get("BOT_TOKEN");
 
-        DiscordApi api = new DiscordApiBuilder(a).setToken(token).login().join();
+        DiscordApi api = new DiscordApiBuilder().setToken(token).login().join();
 
         api.addMessageCreateListener(event -> {
             if (event.getMessageContent().equalsIgnoreCase("!ping")) {
