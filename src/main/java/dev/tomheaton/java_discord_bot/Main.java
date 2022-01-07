@@ -14,8 +14,11 @@ public class Main {
         DiscordApi api = new DiscordApiBuilder().setToken(token).login().join();
 
         api.addMessageCreateListener(event -> {
-            if (event.getMessageContent().equalsIgnoreCase("!ping")) {
+            if (event.getMessageContent().equalsIgnoreCase(">ping")) {
                 event.getChannel().sendMessage("Pong!");
+            }
+            if (event.getMessageContent().equalsIgnoreCase(">pong")) {
+                event.getChannel().sendMessage("Ping!");
             }
         });
 
